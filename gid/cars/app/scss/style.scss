@@ -1,0 +1,374 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+.header{
+	position: fixed;
+	left:0;
+	top:30px;
+	right: 0;
+	z-index: 10;
+	color:#fff;
+
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		min-height: 30px;
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 17px;
+		@extend %ubuntu-medium;
+		color:#fff;
+	}
+
+	&__btn{
+		color:#fff;
+		background-color: transparent;
+		padding: 6px 28px;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		margin-right: 8px;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{
+			color:#000;
+			background-color: #fff;
+		}
+	}
+
+	&__phone{
+		font-size: 16px;
+		line-height: 18px;
+		@extend %ubuntu-bold;
+	}
+
+}
+
+
+.menu{
+	&__list-item{
+		display: inline-block;
+
+		& + .menu__list-item{
+			padding-left: 20px;
+		}
+	}
+}
+
+
+.top{
+	background-image: url(../images/top-bg.jpg);
+
+	&::before{
+		content:'';
+		position: absolute;
+		top:0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+		opacity: 0.4;
+
+	}
+
+	&__wrapper{
+		z-index: 1;
+		display: flex;
+		align-items: flex-end;
+
+	}
+
+	&__inner{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+	}
+
+	&__title{
+		font-size: 96px;
+		line-height: 115px;
+		@extend %sf-semibold;
+		margin-bottom: 25px;
+
+	}
+
+	&__text{
+		margin: 25px 0 35px;
+		max-width: 325px;
+	}
+	
+	
+	&__social-item{
+		display: inline-block;
+		margin: 0 25px;
+	}
+
+	&__social-link{
+		opacity: 0.5;
+		transition: all .3s;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+
+.products{
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		padding-left: 50px;
+	}
+	&__text{
+		max-width: 440px;
+		p{
+			margin-bottom: 30px;
+		}
+	}
+	&__slider-box{
+		position: relative;
+		padding-top: 110px;
+	}
+
+	&__slider-text{
+		width: 280px;
+		position: abosolute;
+		text-align: right;
+		font-size: 24px;
+		line-height: 28px;
+		@extend %ubuntu-medium;
+		left: -250px;
+		z-index: 5;
+	}
+
+	&__slider{
+		max-width: 560px;
+
+		&::before{
+			content: '';
+			position: absolute;
+			width: 560px; 
+			height: 276px;
+			border: 4px solid #fff;
+			top:-15px;
+			right: -17px;
+		}
+		&__slider-item{
+			height: 500px;
+		
+	}
+	}
+	
+}
+
+.slider-btn{
+	padding: 16px 26px;
+	border: none;
+	background-color: #fff;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+	z-index: 5;
+	bottom: -59px;
+	svg{
+		stroke: #000;
+	}
+
+	&__left{
+		right: 60px;
+	}
+
+	&.slick-disabled{
+		background-color: #000;
+		svg{
+			stroke: #fff;
+		}
+
+	}
+}
+.slick-slide img {
+    display: block;
+    height: 350px;
+    width: 100%;
+}
+.benefits{
+	&__items{
+		display: flex;
+		flex-wrap: wrap;
+		
+		padding-left: 25px;
+	}
+
+	&__item{
+	margin-bottom: 100px;	
+	display: flex;
+	align-items: flex-end;
+
+	&:nth-child(even){
+		margin-top: 40px;
+		transform: translateY(15px);
+	}
+
+
+
+	}
+
+	&__item-1{
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			height: 45px;
+			width: 245px;
+			background-image: url('../images/line-1.svg');
+			right:0;
+			bottom:0;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+
+		}
+	}
+
+	&__num{
+		font-size: 36px;
+		line-height: 41px;
+		@extend %ubuntu-bold;
+		margin-right: 10px;
+	}
+	&__img{
+		position: relative;
+		margin-right: 32px;
+		width: 170px;
+		height: auto;
+		&::before{
+			content:'';
+			position: absolute;
+			width: 193px;
+			height: 128px;
+			border: 2px solid #fff;
+			right: -12px;
+			top:-12px;
+			z-index: -1;
+		}
+	}
+
+	&__info{
+		width: 300px;
+	}
+
+	&__info-title{
+		width: 123px;
+		font-size: 21px;
+		line-height: 24px;
+		@extend %ubuntu-bold;
+		margin-bottom: 10px;
+	}
+
+	&__info-text{
+		font-size: 15px;
+		line-height: 18px;
+	}
+}
+
+.benefits__item-3{
+	position: relative;
+	&::before{
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(../images/line-3.svg);
+	width: 254px;
+	height: 39px;
+
+	}
+
+	&::after{
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-image: url(../images/line-2.svg);
+		width: 463px;
+		height: 62px;
+		
+
+	}
+}
+
+.specification{
+	text-align: center;
+	
+	&__item-img{
+	max-width: 70%;
+	}
+}
+
+.questions{
+	text-align: center;
+}
+
+.contacts{
+	&__inner{
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__info-title{
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	&__form-title{
+		font-size: 20px;
+		font-weight: 600;
+		margin-left: auto;
+		
+	}
+
+	&__form-line{
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+	&__form-input{
+		width: 225px;
+	
+	}
+	&__form-textarea{
+		width: 450px;
+		height: 80px;
+		
+	}
+	&__form-btn{
+		margin-left: 160px;
+		margin-top: 30px;
+		background-color: #fff;
+		text-transform: uppercase;
+		padding: 5px 10px;
+		
+		
+		
+	}
+	&__social-list{
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		height: 200px;	
+		align-items: center;
+	}
+}
+
+.top__social-item{
+	width: 50px;
+	height: 50px;
+	margin-bottom: 15px;
+}
+
